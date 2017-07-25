@@ -1,0 +1,30 @@
+import Foundation
+
+func strLength(str: String) -> Int
+{
+    var arr = Array(str.characters)
+    var cnt = 0
+    for Character in arr
+    {
+        cnt+=1
+    }
+    return cnt
+}
+func checkParidrome(str: String) -> String
+{
+    let originStrLen = strLength(str : str)
+    let strLen = Int(floor(Double(originStrLen/2)))
+    let strArr = Array(str.characters)
+    if (strLen > 0)
+    {
+        for i in 0...strLen
+        {
+            if (strArr[i] != strArr[originStrLen - i-1])
+            {
+                return "No"
+            }
+        }
+    }
+    return "Yes"
+}
+print(checkParidrome(str: "racecar"))
